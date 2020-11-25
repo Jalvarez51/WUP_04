@@ -60,6 +60,9 @@ basicCN + geom_boxplot()
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+favstats(WORDSUM~DEGREE,data=wdata)
+```
 
 
 ## Inferential Results
@@ -69,6 +72,10 @@ basicCN + geom_boxplot()
 ```{r}
 model1 <- aov(WORDSUM~DEGREE,data=wdata)
 summary.aov(model1)
+```
+
+```{r}
+plot(TukeyHSD(model1))
 ```
 
 # Discussion and Conclusion
