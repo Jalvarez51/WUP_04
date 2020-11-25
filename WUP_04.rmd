@@ -81,3 +81,4 @@ plot(TukeyHSD(model1))
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+The P value from the analysis of variance was 0.000236<0.05 therefore we reject the null hypothesis. The turkey hsd test shows that high school is different than graduate and also that LT high school is different from graduate, all the rest show no significant differences.
