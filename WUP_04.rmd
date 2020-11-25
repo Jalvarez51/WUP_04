@@ -1,6 +1,6 @@
 ---
 title: "WUP_04"
-author: "Put your name here!"
+author: "Jennifer Alvarez"
 date: "fall 2020"
 output:
   html_document:
@@ -23,6 +23,9 @@ $H_0$ There is no difference between the average score on the WORDSUM test and l
 $H_a$ There is a significant difference in average score on the WORDSUM test between at least two levels of EDUC  
 
 # Methods
+```{r}
+wdata=read.csv("GSScsv.csv")
+```
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
@@ -32,18 +35,41 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 ## Descriptive Results
 
+
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+boxplot(WORDSUM~DEGREE,data=wdata)
+```
+
+
+```{r}
+favstats(WORDSUM~DEGREE,data=wdata)
+```
+
+```{r}
+basicCN <- ggplot(wdata,aes(x=WORDSUM,y=DEGREE))
+
+basicCN + geom_boxplot()
+```
+
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+
+
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=wdata)
+summary.aov(model1)
+```
 
 # Discussion and Conclusion
 
